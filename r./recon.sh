@@ -2,7 +2,7 @@
 
 if [ -z "$1" ]
 then
-        echo "Usage: ./recon.sh <IP>"
+        echo "Usage: recon.sh <IP>"
         exit 1
 fi
 
