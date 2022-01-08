@@ -11,17 +11,6 @@ printf "\n----- NMAP -----\n\n" > results
 echo "Similar Nmap..."
 nmap $1 | tail -n +5 | head -n -3 >> results
 
-while read line
-do
-        if [[ $line == *open* ]] && [[ $line == *http* ]]
-        then
-                echo "Similar Gobuster..."
-                gobuster dir -u $1 -w /usr/share/wordlists/dirb/common.txt -qz > temp1
-
-        echo "Similar WhatWeb..."
-        whatweb $1 -v > temp2
-        fi
-done < results
 
 if [ -e temp1 ]
 then
